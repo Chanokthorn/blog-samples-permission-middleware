@@ -20,13 +20,6 @@ func main() {
 	handler := NewHandler()
 
 	// setup api routes
-	//r.POST("/product", handler.CreateProduct).
-	//	Use(permission.NewMiddleware(user.RoleMember, user.RoleAdmin))
-	//r.DELETE("/product/:id", handler.DeleteProduct).
-	//	Use(permission.NewMiddleware(user.RoleAdmin))
-	//r.POST("/product/:id/need-admin-notification", handler.SetNeedAdminNotification).
-	//	Use(permission.NewMiddleware(user.RoleMember))
-
 	r.POST(
 		"/product",
 		permission.NewMiddleware(user.RoleMember, user.RoleAdmin),
