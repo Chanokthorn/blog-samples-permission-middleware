@@ -1,10 +1,15 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	user_jwt "product-service/internal/middleware/user-jwt"
+)
 
 func main() {
 	// setup gin server
 	r := gin.Default()
+
+	r.Use(user_jwt.NewUserJWT("some-jwt-secret"))
 
 	// setup handler (things should be a lot more complex here, but for simplicity's sake we'll leave
 	// it as simple as this
