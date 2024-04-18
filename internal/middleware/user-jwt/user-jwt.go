@@ -3,6 +3,7 @@ package user_jwt
 import (
 	"errors"
 	"net/http"
+
 	"product-service/internal/user"
 
 	"github.com/gin-gonic/gin"
