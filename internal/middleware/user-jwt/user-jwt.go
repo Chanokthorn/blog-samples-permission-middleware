@@ -17,7 +17,7 @@ type Claims struct {
 	jwt.RegisteredClaims
 }
 
-func NewUserJWT(secret string) gin.HandlerFunc {
+func NewMiddleware(secret string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		userJWT := c.GetHeader("x-user-jwt")
 		claims := &Claims{}

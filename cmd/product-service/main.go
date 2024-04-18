@@ -9,7 +9,7 @@ func main() {
 	// setup gin server
 	r := gin.Default()
 
-	r.Use(user_jwt.NewUserJWT("some-jwt-secret"))
+	r.Use(user_jwt.NewMiddleware("some-jwt-secret"))
 
 	// setup handler (things should be a lot more complex here, but for simplicity's sake we'll leave
 	// it as simple as this
